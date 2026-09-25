@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,300;1,14..32,400;1,14..32,500&family=Inter:wght@400;500;600&family=Outfit:wght@300;400;500&family=Hind+Siliguri:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 76 36% 95%;
+    --foreground: 145 22% 10%;
+    --card: 80 38% 96%;
+    --card-foreground: 145 22% 10%;
+    --popover: 80 40% 97%;
+    --popover-foreground: 145 22% 10%;
+    --primary: 145 22% 10%;
+    --primary-foreground: 76 36% 95%;
+    --secondary: 78 26% 89%;
+    --secondary-foreground: 145 22% 10%;
+    --muted: 74 22% 87%;
+    --muted-foreground: 145 12% 30%;
+    --accent: 96 30% 52%;
+    --accent-foreground: 145 22% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 78 16% 80%;
+    --input: 78 16% 80%;
+    --ring: 96 30% 52%;
+    --radius: 0.75rem;
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-ui: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-bn: 'Hind Siliguri', sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-optical-sizing: auto;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 18px;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+    font-optical-sizing: auto;
+  }
+  ::selection {
+    background: #7E9B6A;
+    color: #F4F1E8;
+  }
+  a, button, input, select, textarea {
+    transition: color 0.45s var(--ease-soft), background-color 0.5s var(--ease-soft), border-color 0.5s var(--ease-soft), box-shadow 0.5s var(--ease-soft), opacity 0.45s var(--ease-soft);
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #EAE4D6; }
+  ::-webkit-scrollbar-thumb { background: #B6824F; border-radius: 999px; border: 2px solid #EAE4D6; }
+  ::-webkit-scrollbar-thumb:hover { background: #7E9B6A; }
+}
+
+@layer utilities {
+  .font-ui { font-family: var(--font-ui); }
+  .font-bn { font-family: var(--font-bn); }
+  .text-vertical { writing-mode: vertical-rl; }
+  .pause-hover:hover .marquee-track { animation-play-state: paused; }
+  .ease-soft { transition-timing-function: var(--ease-soft); }
+  .color-shift { transition: background-color 0.6s var(--ease-soft), color 0.5s var(--ease-soft), border-color 0.5s var(--ease-soft), box-shadow 0.5s var(--ease-soft); }
+}

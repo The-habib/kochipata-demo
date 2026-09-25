@@ -1,0 +1,59 @@
+{
+  "name": "Reservation",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Guest full name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Guest phone number"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "time": {
+      "type": "string",
+      "description": "Expected arrival time"
+    },
+    "group_size": {
+      "type": "string",
+      "enum": [
+        "1-4 guests",
+        "5-15 guests",
+        "Bus tour 15+"
+      ],
+      "default": "1-4 guests"
+    },
+    "seating": {
+      "type": "string",
+      "enum": [
+        "Private cabin",
+        "Garden pavilion",
+        "Indoor hall",
+        "No preference"
+      ],
+      "default": "No preference"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "confirmed",
+        "cancelled"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "name",
+    "phone",
+    "date",
+    "time"
+  ]
+}
